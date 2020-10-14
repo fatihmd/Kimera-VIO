@@ -5,6 +5,7 @@ project(kimera_vio VERSION 1.0 LANGUAGES CXX)
 # Prefer to use system installation of gflags/glog
 set(GFLAGS_PREFER_EXPORTED_GFLAGS_CMAKE_CONFIGURATION TRUE)
 set(GLOG_PREFER_EXPORTED_GLOG_CMAKE_CONFIGURATION TRUE)
+set("OpenCV_DIR" "/home/fmd/anaconda3/envs/kimera/opencv3.3.1")
 list(INSERT CMAKE_MODULE_PATH 0 ${CMAKE_SOURCE_DIR}/cmake)
 
 IF(APPLE)
@@ -33,7 +34,12 @@ find_package(Gflags REQUIRED)
 find_package(Glog 0.3.5 REQUIRED)
 find_package(GTSAM REQUIRED)
 find_package(opengv REQUIRED)
-find_package(OpenCV REQUIRED)
+#find_package(OpenCV REQUIRED)
+
+find_package(OpenCV 3.3.1 REQUIRED PATHS "/home/fmd/anaconda3/envs/kimera/opencv3.3.1")
+MESSAGE("*************OPENCV VERSION:****************************")
+MESSAGE(${OpenCV_VERSION})
+
 find_package(DBoW2 REQUIRED)
 if(NOT TARGET DBoW2::DBoW2)
   add_library(DBoW2::DBoW2 INTERFACE IMPORTED)

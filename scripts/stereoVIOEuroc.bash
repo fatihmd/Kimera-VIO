@@ -4,16 +4,16 @@
 
 # Specify path of the EuRoC dataset.
 # The path can be absolute, or relative to this file location.
-DATASET_PATH="/path/to/euroc/dataset"
+DATASET_PATH="/home/fmd/Euroc_kimera"
 
 # Specify: 0 to run on EuRoC data, 1 to run on Kitti (not supported)
 DATASET_TYPE=0
 
 # Specify: 1 to enable the LoopClosureDetector, 0 to not.
-USE_LCD=0
+USE_LCD=1
 
 # Specify: 1 to enable logging of output files, 0 to not.
-LOG_OUTPUT=0
+LOG_OUTPUT=1
 ###################################################################
 
 ###################################################################
